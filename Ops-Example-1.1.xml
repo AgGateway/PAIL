@@ -174,15 +174,15 @@
 				<stamp1>2016-01-11T00:00:00Z</stamp1>
 			</timeScope>
 			<systemLength>978.9</systemLength>
-			<lengthUnitOfMeasure>FOT</lengthUnitOfMeasure>
-			<areaTotalUnitOfMeasure>ACR</areaTotalUnitOfMeasure>
+			<lengthUoM>FOT</lengthUoM>
+			<areaTotalUoM>ACR</areaTotalUoM>
 			<nominalPressure>17</nominalPressure>
 			<nominalEfficiency>90</nominalEfficiency>
-			<pressureUnitOfMeasure>PS</pressureUnitOfMeasure>
+			<pressureUoM>PS</pressureUoM>
 			<pressureLocation>AT_BASE_OF_SYSTEM</pressureLocation>
 			<nominalFlow>300</nominalFlow>
-			<flowUnitOfMeasure>G2</flowUnitOfMeasure>
-			<depthUnitOfMeasure>INH</depthUnitOfMeasure>
+			<flowUoM>G2</flowUoM>
+			<depthUoM>INH</depthUoM>
 			<nominalFullCircleTime>PT6H6M</nominalFullCircleTime>
 		</irrSetup>
 	</irrSetupData>

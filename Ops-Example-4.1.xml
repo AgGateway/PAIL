@@ -47,10 +47,10 @@
 				<stamp1>2016-01-11T00:00:00Z</stamp1>
 			</timeScope>
 			<systemLength>978.9</systemLength>
-			<lengthUnitOfMeasure>FOT</lengthUnitOfMeasure>
+			<lengthUoM>FOT</lengthUoM>
 			<nominalEfficiency>90</nominalEfficiency>
 			<nominalFlow>300</nominalFlow>
-			<depthUnitOfMeasure>INH</depthUnitOfMeasure>
+			<depthUoM>INH</depthUoM>
 			<nominalFullCircleTime>PT6H6M</nominalFullCircleTime>
 		</irrSetup>
 	</irrSetupData>

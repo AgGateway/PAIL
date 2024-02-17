@@ -207,12 +207,12 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Useful for identifying systems and allocating water in FMIS. Optional.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="lengthUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="lengthUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Use a UN Rec 20 Common Code here: FOT (feet) or MTR (meter).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="areaTotalUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="areaTotalUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unit of measure of the total irrigated area covered by a recommendation, work order or work record, in the form of a UN Rec 20 code, e.g., "ACR" for US acre.</xs:documentation>
 				</xs:annotation>
@@ -232,7 +232,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Efficiency as it applies to the whole system when no other section specific efficiency values are present and when no WorkRecord specific values are given.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="pressureUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="pressureUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Use a UN Rec. 20 Common Code here: PS (PSI), BAR (bar), etc.</xs:documentation>
 				</xs:annotation>
@@ -247,27 +247,27 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>The nominal volume per unit time being delivered by the irrigation system.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="flowUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="flowUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unit of measure used to express all flows in the system (e.g., NominalFLow.) Use a UN Rec. 20 Common Code here: G2 (GPM), MLT (milliliter), etc.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="depthUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="depthUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unit of measure used to express irrigation depth (e.g., within SectionFlow elements.) Use a UN Rec. 20 Common Code here: INH (inch), MLT (mL), etc.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="waterTotalUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="waterTotalUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unit of measure of the total amount of water applied, in the form of a UN Rec 20 code, e.g., "GLL" for US gallon.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="productRateUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="productRateUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unit of measure used to express product (e.g., chemical or fertilizer) rate within SectionFlow elements. Use a UN Rec. 20 Common Code here: G2 (GPM), 59 (ppm), etc.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="productTotalUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="productTotalUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unit of measure used to express total product (e.g., chemical or fertilizer) used within SectionFlow elements. Use a UN Rec. 20 Common Code here: GLL (US gallon), KGM (kilogram), etc.</xs:documentation>
 				</xs:annotation>
@@ -863,7 +863,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Explains how the product is applied and what to expect in terms of units of measure. The nomenclature corresponds to DDIs used by the ISO11783-10 standard, available at http://dictionary.isobus.net/isobus/ Note that if VolumePerTime and MassPerTime are being used, these are expressed on a per SECTION basis in the SectionFlow elements, and would typically be equal to the system-wide injection rate only in a single-section system. Also, if there is a change in the water flow rate through the pivot (e.g., as an end gun is turned on/off) the effect of that change of water flow on product concentration (in the context of an assumed constant injection rate) must be taken into account.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="productRateUnitOfMeasure" type="xs:token" minOccurs="1">
+			<xs:element name="productRateUoM" type="xs:token" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The unit of measure used to apply the product, or an extension thereof. This unit should be convertible to the unit used inn the corresponding ISO11783-10 DDI.</xs:documentation>
 				</xs:annotation>
@@ -873,7 +873,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Total amount of the product applied over the scope of the document.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="productTotalUnitOfMeasure" type="xs:token" minOccurs="0">
+			<xs:element name="productTotalUoM" type="xs:token" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>WMO Common Code for the unit of measure used to describe the total product applied, or an extension thereof. This unit should be convertible to the unit used inn the corresponding ISO11783-10 DDI.</xs:documentation>
 				</xs:annotation>
