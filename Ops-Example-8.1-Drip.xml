@@ -283,5 +283,5 @@
 			<originatingWorkOrderRef>10</originatingWorkOrderRef>
 		</irrWorkRecord>
 	</irrDocs>
-	<unitOfMeasureAuthority>UN_REC_20</unitOfMeasureAuthority>
+	<unitOfMeasureAuthority>UNREC20</unitOfMeasureAuthority>
 </operations>

@@ -329,12 +329,12 @@
 			</xs:element>
 			<xs:element name="unitOfMeasure" type="xs:string" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The unit of measure, to be taken from the UN Rec. 20 list of common codes; e.g., "LTR" (liter), "GLL" (US Gallon)  </xs:documentation>
+					<xs:documentation>The unit of measure, to be taken from the UN Rec. 20 list of common codes; e.g., "LTR" (liter), "GLL" (US Gallon)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="timeScope" type="TimeScope" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Optional list of TimeScopes. Allows setting a validity range and capturing who (and perhaps where) something was tagged with the ContextItem..</xs:documentation>
+					<xs:documentation>Optional list of TimeScopes. Allows setting a validity range and capturing who (and perhaps where) something was tagged with the ContextItem.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
@@ -784,17 +784,17 @@
 			<xs:documentation>Provides information about the origin and accuracy of geographical location and angular position information.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="SINGLE_GPS_WAAS">
+			<xs:enumeration value="SINGLE_GNSS_WAAS">
 				<xs:annotation>
 					<xs:documentation>Single-GPS, with WAAS (Wide-Area Augmentation System) corrections.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="SINGLE_GPD_BASIC_FIX">
+			<xs:enumeration value="SINGLE_GNSS_BASIC_FIX">
 				<xs:annotation>
 					<xs:documentation>Single GPS unit, with no differential or WAAS corrections.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="DIFFERENTIAL_GPS">
+			<xs:enumeration value="DIFFERENTIAL_GNSS">
 				<xs:annotation>
 					<xs:documentation>Geographic position data is being derived from a set of two GPS units: one mobile, and one fixed.</xs:documentation>
 				</xs:annotation>
@@ -836,9 +836,9 @@
 			<xs:documentation>Different telemetry systems use different strategies for assigning timestamps to events. This enumeration lists them, and enables the user to interpret the timing of received data.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="GPS_ON_EVENT">
+			<xs:enumeration value="GNSS_ON_EVENT">
 				<xs:annotation>
-					<xs:documentation>The system tags the event with a GPS-mediated timestamp corresponding to the moment when the event happened. This is deemed the most accurate approach.</xs:documentation>
+					<xs:documentation>The system tags the event with a GNSS-mediated timestamp corresponding to the moment when the event happened. This is deemed the most accurate approach.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="DEVICE_CLOCK_ON_EVENT">
@@ -1026,7 +1026,12 @@
 					<xs:documentation>An agency of local, state/provincial, or national government, typically considered in a regulatoiry role.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="ASSET_SUPPLIER">
+			<xs:enumeration value="STATIONARY_ASSET_SUPPLIER">
+				<xs:annotation>
+					<xs:documentation>A person or organization that supplies or maintains stationary assets (e.g., grain bins, scales, stationary irrigation systems) used in crop production.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MOBILE_ASSET_SUPPLIER">
 				<xs:annotation>
 					<xs:documentation>A person or organization that supplies or maintains mobile assets (e.g., tractors, sprayers, mobile irrigation systems) or stationary assets (e.g., grain bins, scales, stationary irrigation systems) used in crop production. </xs:documentation>
 				</xs:annotation>
@@ -1078,7 +1083,7 @@
 			<xs:documentation>Describes the organization providing the controlled vocabulary of units of measure used in a document or part thereof.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="UN_REC_20">
+			<xs:enumeration value="UNREC20">
 				<xs:annotation>
 					<xs:documentation>UN/CEFACT Recommendation 20 (http://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20_Rev7e_2010.zip)</xs:documentation>
 				</xs:annotation>
