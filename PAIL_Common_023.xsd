@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by CEC-Blue Tech Valley Energy 22 (CEC-Blue Tech Valley Energy 22) -->
-<xs:schema xmlns="http://aggateway.org/PAIL/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://aggateway.org/PAIL/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
 	<xs:annotation>
 		<xs:documentation>------------------------ REFERENCE DATA-RELATED TYPES --------------------</xs:documentation>
 	</xs:annotation>
@@ -139,7 +141,9 @@
 			<xs:documentation>A universally-unique identifier, such as a Microsoft GUID.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+			<xs:pattern
+				value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+			/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="CompoundIdentifier">
@@ -270,7 +274,7 @@
 	</xs:complexType>
 	<xs:complexType name="NumericValue">
 		<xs:annotation>
-			<xs:documentation>Encapsulates a number with its corresponding unit of measure. The unit of measure is assumed to come from the UN Rec 20 list.</xs:documentation>
+			<xs:documentation>Encapsulates a number with its corresponding unit of measure.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="value" type="xs:double">
@@ -280,7 +284,7 @@
 			</xs:element>
 			<xs:element name="unitOfMeasure" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>The unit of measure, to be taken from the UN Rec 20 list of common codes; e.g., "LTR" (liter), "GLL" (US Gallon)  </xs:documentation>
+					<xs:documentation>The unit of measure code, as specifed by the decalred UoMAuthority</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -626,8 +630,10 @@
 			<xs:documentation>Mechanism for specifying the coverage of an irrigation operation. When dealing with a radial section, such as a section of a pivot span, it is most convenient to use the RadialScope; use MultiPolygonScope otherwise.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="radialScope" type="RadialSpatialScope" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="multiPolygonScope" type="MultiPolygonSpatialScope" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="radialScope" type="RadialSpatialScope" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="multiPolygonScope" type="MultiPolygonSpatialScope" minOccurs="0"
+				maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="RadialSpatialScope">
