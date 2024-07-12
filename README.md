@@ -20,13 +20,18 @@ There is also a *prototype* JSON schema ...
 ## Examples
 Ops-Example-1.1.xml  
 Ops-Example-2.1.xml  
+Ops-Example-3.1.xml  
+Ops-Example-4.1.xml  
+Ops-Example-5.1-Chemigation (polygon).xml  
+Ops-Example-5.1-Chemigation.xml  
+Ops-Example-8.1-Drip.xml  
 
 # External Links
-[AgGateway](aggateway.org)
-[AgGateway Public PAIL portal]()
-[AgGateway PAIL Wiki](https://aggateway.atlassian.net/wiki/spaces/PAIL/overview) (you must be an AgGateway member to access this wiki)
-[PAIL Flyer](https://s3.amazonaws.com/aggateway_public/AgGatewayWeb/News/CommunicationsKit/AgGatewayPAIL_72219.pdf)
+[AgGateway](aggateway.org)  
+[AgGateway Public PAIL portal]()  
+[AgGateway PAIL Wiki](https://aggateway.atlassian.net/wiki/spaces/PAIL/overview) (you must be an AgGateway member to access this wiki)  
+[PAIL Flyer](https://s3.amazonaws.com/aggateway_public/AgGatewayWeb/News/CommunicationsKit/AgGatewayPAIL_72219.pdf)  
 
-[ASABE S632-1]()
-[ASABE S632-3]()
-[ISO 7673]()
+[ASABE S632-1]()  
+[ASABE S632-3]()  
+[ISO 7673]()  
