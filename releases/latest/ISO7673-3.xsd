@@ -3,7 +3,8 @@
 <xs:schema xmlns="http://aggateway.org/PAIL/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified">
-	<xs:include schemaLocation="PAIL_Common_023.xsd"/>
+	<xs:include
+		schemaLocation="https://github.com/AgGateway/PAIL/blob/main/releases/latest/ISO7673-1.xsd"/>
 	<xs:annotation>
 		<xs:documentation>------------------------ OPERATIONS TYPE --------------------</xs:documentation>
 	</xs:annotation>
@@ -32,7 +33,8 @@
 					<xs:documentation>This element encapsulates a set of field operations-related documents: recommendations, work orders, and work records.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="unitOfMeasureAuthority" type="UnitOfMeasureAuthorityEnum" minOccurs="0"/>
+			<xs:element name="unitOfMeasureAuthority" type="UnitOfMeasureAuthorityEnum"
+				minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="IrrDocs">
@@ -43,8 +45,7 @@
 					<xs:documentation>Irrigation recommendation document. Describes a course of action suggested by an actor with expertise.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="irrWorkOrder" type="IrrWorkOrder" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="irrWorkOrder" type="IrrWorkOrder" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Irrigation work order document. Describes a course of action indicated by an actor with authority.</xs:documentation>
 				</xs:annotation>
@@ -65,14 +66,12 @@
 			<xs:documentation>Type used to define unique identifiers for a manufacturer and the things that are expressed in terms of manufacturers. Note that the manufacturer's GLN and/or website can be defined as UniqueIDs of type GLN or URI within the CompoundIdentifier. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="manufacturer" type="Manufacturer" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="manufacturer" type="Manufacturer" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Reference data describing a manufacturer of products or equipment.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="systemModel" type="SystemModel" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="systemModel" type="SystemModel" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Reference data describing a particular manufacturer-specific model of equipment.</xs:documentation>
 				</xs:annotation>
@@ -110,8 +109,7 @@
 					<xs:documentation>Identifies what kind of system is being reported: Pivot, Linear, or Drip tape?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
@@ -347,8 +345,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Definition of the setup of a particular irrigation system (during an optional time period. Can also be used independently of a system, for hardware-independent recommendations and work orders.)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="waterSource" type="WaterSource" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="waterSource" type="WaterSource" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Definition of the sources of water sources used by this Farm in irrigation records.</xs:documentation>
 				</xs:annotation>
@@ -366,8 +363,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Time range over which this set definition is valid.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded"/>
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="WaterSource">
@@ -376,8 +372,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 			<xs:element name="sourceType" type="WaterSourceTypeEnum"/>
 			<xs:element name="name" type="xs:string" minOccurs="0"/>
 			<xs:element name="description" type="xs:string" minOccurs="0"/>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded"/>
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:annotation>
@@ -478,8 +473,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>An optional note, including free text, optional time, location, and person/role.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
@@ -592,8 +586,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>An optional note, including free text, optional time, location, and person/role.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
@@ -719,8 +712,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>An optional note, including free text, optional time, location, and person/role.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
@@ -781,8 +773,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>The estimated efficiency of this application.  This value overrides the NominalEfficiency values given in the setup.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
@@ -815,8 +806,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Used to define a local center of rotation for the IrrItem. Would typically only be used in a recommendation or work order expressing high-level instructions: in a work record or other finer-granularity document this would be declared at the IrrCollection level.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="sectionFlow" type="SectionFlow" minOccurs="1"
-				maxOccurs="unbounded">
+			<xs:element name="sectionFlow" type="SectionFlow" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>TODO</xs:documentation>
 				</xs:annotation>
@@ -836,8 +826,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>The estimated efficiency of this application for this particular section.  This value overrides the EstimatedEfficiency specified for the IrrCollection and the values specified in the IrrSetup.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
@@ -1111,8 +1100,7 @@ Drop tape: Water inlet into the tape. This element is optional to accommodate ab
 					<xs:documentation>Human-readable series name. "e.g., "8000 Series")</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contextItem" type="ContextItem" minOccurs="0"
-				maxOccurs="unbounded">
+			<xs:element name="contextItem" type="ContextItem" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
 				</xs:annotation>
