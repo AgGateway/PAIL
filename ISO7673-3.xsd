@@ -3,7 +3,7 @@
 	targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified">
 	<xs:include
-		schemaLocation="https://github.com/AgGateway/PAIL/blob/main/releases/latest/ISO7673-1.xsd"/>
+		schemaLocation="https://github.com/AgGateway/PAIL/ISO7673-1.xsd"/>
 	<xs:annotation>
 		<xs:documentation>------------------------ OPERATIONS TYPE --------------------</xs:documentation>
 	</xs:annotation>
