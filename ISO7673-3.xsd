@@ -2,8 +2,8 @@
 <xs:schema xmlns="http://aggateway.org/PAIL/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified">
-	<xs:include
-		schemaLocation="https://github.com/AgGateway/PAIL/blob/main/releases/latest/ISO7673-1.xsd"/>
+	<!-- Recommendation: Download archive file at   and expand it into your working directory. -->
+	<xs:include schemaLocation="./ISO7673-1.xsd"/>
 	<xs:annotation>
 		<xs:documentation>------------------------ OPERATIONS TYPE --------------------</xs:documentation>
 	</xs:annotation>

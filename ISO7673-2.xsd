@@ -2,8 +2,8 @@
 <xs:schema xmlns="http://aggateway.org/PAIL/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified">
-	<xs:include
-		schemaLocation="https://github.com/AgGateway/PAIL/blob/main/releases/latest/ISO7673-1.xsd"/>
+	<!-- Recommendation: Download archive file at   and expand it into your working directory. -->
+	<xs:include schemaLocation="./ISO7673-1.xsd"/>
 	<xs:annotation>
 		<xs:documentation>------------------------ OBSERVATIONS TYPE --------------------</xs:documentation>
 	</xs:annotation>
@@ -32,12 +32,12 @@
 					<xs:documentation>A document that contains ISO 19156 observations (including forecasts and anayses).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="UoMAuthority" type="UoMAuthorityEnum" minOccurs="0">
+			<xs:element name="UoMAuthority" type="UnitOfMeasureAuthorityEnum" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>It is important to use a controlled vocabulary for the codes that represent units of measure. However, there currently exist several organizations that maintain such code lists. This attribute lspecifies which organization's codes are being used in the current document. NOTE: A given instance document must use the same set of codes throughout.  </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ContextItem" type="ContextItemType" minOccurs="0"
+			<xs:element name="ContextItem" type="ContextItem" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
@@ -53,7 +53,7 @@
 			<xs:documentation>Type for describing reference data. This includes codes for observed properties and processes, and also data associated with a manufacturer's products.  Includes data loggers, sensors, irrigation systems, and (crop protection or crop nutrition) products.  These are specific to a particular model or equipment ot productm and not a particular instance of a model.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Manufacturer" type="ManufacturerType" minOccurs="0"
+			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Defines a manufacturer that is referenced by LoggerModelReferenceType and SensorModelReferenceType.</xs:documentation>
@@ -126,7 +126,7 @@
 			<xs:documentation>Type used to define unique identifiers for different logger manufacturer/model combinations.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Id" type="CompoundIdentifierType"/>
+			<xs:element name="Id" type="CompoundIdentifier"/>
 			<xs:element name="Description" type="xs:string"/>
 			<xs:element name="ManufacturerRef" type="xs:integer">
 				<xs:annotation>
@@ -143,7 +143,7 @@
 			<xs:documentation>Type used to define unique identifiers for particular model of a sensor.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Id" type="CompoundIdentifierType"/>
+			<xs:element name="Id" type="CompoundIdentifier"/>
 			<xs:element name="Description" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Manufacturer-spedified model name of the sensor.Example: "10HS" for a Decagon 10HS sensor, where "Decagon" is the manufacturer name. Should be unique relative to other sensors of the same type from the same manufacturer</xs:documentation>
@@ -377,7 +377,7 @@
 					<xs:documentation>Shows whether non-ValueUoM unit conversions should be allowed.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TimeScope" type="TimeScopeType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="TimeScope" type="TimeScope" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A time or time interval budled along with its meaning. Would typically express the range of validity of the setup record.</xs:documentation>
 				</xs:annotation>
@@ -446,7 +446,7 @@
 					<xs:documentation>.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ContextItems" type="ContextItemType" minOccurs="0"
+			<xs:element name="ContextItems" type="ContextItem" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>.</xs:documentation>
@@ -738,60 +738,60 @@
 					<xs:documentation>An optional URL pointing to an XML document containing the set of Reference data  needed to support this Setup element (or a subset thereof, such as the Codes). Links found on child elements should be examined before examining this one.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Grower" type="GrowerType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Grower" type="Grower" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of growers / business entities.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Farm" type="FarmType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Farm" type="Farm" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of farms. Note that farms reference a grower.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Field" type="FieldType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Field" type="Field" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of fields. Note that fields reference a grower, and a farm.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Cropzone" type="CropzoneType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Cropzone" type="Cropzone" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of cropzones. Note that cropzones reference a field.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FieldBoundary" type="FieldBoundaryType" minOccurs="0"
+			<xs:element name="FieldBoundary" type="FieldBoundary" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of field boundaries. Field boundaries reference fields.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Person" type="PersonType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Person" type="Person" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of persons.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PersonRole" type="PersonRoleType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="PersonRole" type="PersonRole" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Optional list of person/role combinations. PersonRoles can happen in the context of a specific grower / business.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LoggerConfig" type="LoggerConfigType" minOccurs="0"
+			<xs:element name="LoggerConfig" type="LoggerConfig" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A device that records sensor readings and may communicate or store those readings.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SensorConfig" type="SensorConfigType" minOccurs="0"
+			<xs:element name="SensorConfig" type="SensorConfig" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A particular instance of a sensor, the model of which is defined in reference data.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ObsConfig" type="ObsConfigType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ObsConfig" type="ObsConfig" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A sensor put iin the context of a measurement and installation</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Locations" type="GazetteerType" minOccurs="0" maxOccurs="1">
+			<xs:element name="Locations" type="Gazetteer" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A gazetteer: a List of Observation locations (sites) known a priori (e.g., stations and predetermined sampling sites) and used by reference elsewhere.</xs:documentation>
 				</xs:annotation>
@@ -821,7 +821,7 @@
 					<xs:documentation>Human readable description of the config record.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TimeScope" type="TimeScopeType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="TimeScope" type="TimeScope" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A time or time interval budled along with its meaning. Would typically express the range of validity of the setup record.</xs:documentation>
 				</xs:annotation>
@@ -864,7 +864,7 @@
 			<xs:documentation>Data type used for describing the characteristics of a particular instance of a datalogger.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Id" type="CompoundIdentifierType">
+			<xs:element name="Id" type="CompoundIdentifier">
 				<xs:annotation>
 					<xs:documentation>Unique identifier for this particular datalogger.</xs:documentation>
 				</xs:annotation>
@@ -879,7 +879,7 @@
 					<xs:documentation>Human readable textual comment relevant to the Sensor instance</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TimeScope" type="TimeScopeType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="TimeScope" type="TimeScope" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A time or time interval budled along with its meaning. Would typically express the range of validity of the setup record.</xs:documentation>
 				</xs:annotation>
@@ -964,7 +964,7 @@
 			<xs:documentation>Data type used for describing the a particular instance of a sensor type.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Id" type="CompoundIdentifierType">
+			<xs:element name="Id" type="CompoundIdentifier">
 				<xs:annotation>
 					<xs:documentation>ID for this particular instance, distinct from the ID of the SensorModelReferenceType record.</xs:documentation>
 				</xs:annotation>
@@ -979,7 +979,7 @@
 					<xs:documentation>Human readable textual comment relevant to the Sensor instance</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TimeScope" type="TimeScopeType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="TimeScope" type="TimeScope" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A time or time interval budled along with its meaning. Would typically express the range of validity of the setup record.</xs:documentation>
 				</xs:annotation>
@@ -1059,7 +1059,7 @@
 					<xs:documentation>Integer reference to a location in the gazetteer. Enables specifying the position of the sensor by reference. NOTE: This element and Position are mutually exclusive; if LocationRef is used, Position should not be present, and vice-versa.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Position" type="PositionType" minOccurs="0">
+			<xs:element name="Position" type="Position" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Mechanism for specifying the position of the sensor by value. NOTE: This element and LocationRef are mutually exclusive; if Position is used, LocationRef should not be present, and vice-versa.</xs:documentation>
 				</xs:annotation>
@@ -1131,7 +1131,7 @@
 					<xs:documentation>Integer reference to a location in the gazetteer. Enables specifying the position of the sensor by reference. NOTE: This element and Position are mutually exclusive; if LocationRef is used, Position should not be present, and vice-versa.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Position" type="PositionType" minOccurs="0">
+			<xs:element name="Position" type="Position" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Mechanism for specifying the position of the sensor by value. NOTE: This element and LocationRef are mutually exclusive; if Position is used, LocationRef should not be present, and vice-versa.</xs:documentation>
 				</xs:annotation>
@@ -1218,7 +1218,7 @@
 					<xs:documentation>Integer reference to a location in the gazetteer. Enables specifying the position of the sensor by reference. NOTE: This element and Position are mutually exclusive; if LocationRef is used, Position should not be present, and vice-versa.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Position" type="PositionType" minOccurs="0">
+			<xs:element name="Position" type="Position" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Mechanism for specifying the position of the sensor by value. NOTE: This element and LocationRef are mutually exclusive; if Position is used, LocationRef should not be present, and vice-versa.</xs:documentation>
 				</xs:annotation>
@@ -1280,12 +1280,12 @@
 	</xs:annotation>
 	<xs:complexType name="DatasetMetaDataType">
 		<xs:sequence>
-			<xs:element name="Id" type="CompoundIdentifierType" minOccurs="1">
+			<xs:element name="Id" type="CompoundIdentifier" minOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Identifier for this metadata record</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="DCMetadata" type="DCMetadataArrayType"/>
+			<xs:element name="DCMetadata" type="DCMetadataArray"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SourceType">
@@ -1315,7 +1315,7 @@
 			<xs:documentation>Type for containing data collected by sensors via dataloggers.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="DatasetId" type="CompoundIdentifierType" minOccurs="0">
+			<xs:element name="DatasetId" type="CompoundIdentifier" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Optional unique identifier for this particular dataset.</xs:documentation>
 				</xs:annotation>
@@ -1340,12 +1340,12 @@
 					<xs:documentation>A collection of Collections or Observations.  Values specified in the ObsColl apply to all the child ObsColl and Obs elements.  If any of the child elements contain elements that are also present in the parent ObsCollection, then the child's values override the  parent.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="Locations" type="GazetteerType" minOccurs="0">
+			<xs:element name="Locations" type="Gazetteer" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The geographical location of a collection of observations. These are the locations LocRefs point to.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ContextItem" type="ContextItemType" minOccurs="0"
+			<xs:element name="ContextItem" type="ContextItem" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
@@ -1358,7 +1358,7 @@
 			<xs:documentation>An ISO 19156 Observation</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ObsId" type="CompoundIdentifierType" minOccurs="0">
+			<xs:element name="ObsId" type="CompoundIdentifier" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Optional unique identifier for this particular observation.</xs:documentation>
 				</xs:annotation>
@@ -1368,7 +1368,7 @@
 					<xs:documentation>Identifies the Source (Sensor-measurement code-installation combination) for this particular ISO 19156 observation. It is optional, to accommodate situations where it is more compact to specify Code and position directly. It is a reference to the ObsConfig element that has the same code.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PhenTime" type="TimeScopeType" minOccurs="0">
+			<xs:element name="PhenTime" type="TimeScope" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 19156 phenomenonTime. Time when the phenomenon took place. Optional because it may be reported higher in the hierarchy. Note that in the case of forecasts this phenomenon time may occur in the future.</xs:documentation>
 				</xs:annotation>
@@ -1378,7 +1378,7 @@
 					<xs:documentation>ISO 19156 resultTme. Time when the result (value) was obtained. Optional because a) it may be reported higher in the hierarchy.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ValidTime" type="TimeScopeType" minOccurs="0">
+			<xs:element name="ValidTime" type="TimeScope" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 19156 validTme. A timescope that expresses the time interval that the result will be vallid for. Useful Time when the result (value) was obtained. Optional because a) it may be reported higher in the hierarchy.</xs:documentation>
 				</xs:annotation>
@@ -1420,17 +1420,17 @@
 					<xs:documentation>An integer reference to the geographical location of an observation.Use this if the dataset will reference the same locations multiple times. Do NOT use together with FOIPosition, FOILieString, or FOIMultiPolygon</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FOIPosition" type="PositionType" minOccurs="0" maxOccurs="1">
+			<xs:element name="FOIPosition" type="Position" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The geographical extent of an individual observation, expressed as a Potition. This is only needed when the position can/does change between readings.  Do NOT use together with LocRef, FOILineString, or FOIMultiPolygon.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FOILineString" type="LineStringType" minOccurs="0" maxOccurs="1">
+			<xs:element name="FOILineString" type="LineString" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The geographical extent of an individual observation, expressed as a LineString.  This is only needed when the location can/does change between readings.  Do NOT use together with LocRef, FOIPosition, or FOIMultiPolygon.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FOIMultiPolygon" type="MultiPolygonSpatialScopeType" minOccurs="0"
+			<xs:element name="FOIMultiPolygon" type="MultiPolygonSpatialScope" minOccurs="0"
 				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The geographical extent of an individual observation, expressed as a MultiPolygon.  This is only needed when the location can/does change between readings.  Do NOT use together with LocRef, FOIPosition, or FOILineString.</xs:documentation>
@@ -1457,7 +1457,7 @@
 					<xs:documentation>Value for the observation. 20160120: Simon, this is declared as an xs:double for demonstration purposes only; we will accommodate numeric, string, and enumerated representations..</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ContextItem" type="ContextItemType" minOccurs="0"
+			<xs:element name="ContextItem" type="ContextItem" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
@@ -1470,7 +1470,7 @@
 			<xs:documentation>A mechanism for establishing relationships among ISO 19156 observations, using collections.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="ObsCollectionId" type="CompoundIdentifierType" minOccurs="0">
+			<xs:element name="ObsCollectionId" type="CompoundIdentifier" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Optional compound identifier for this particular collection.</xs:documentation>
 				</xs:annotation>
@@ -1480,7 +1480,7 @@
 					<xs:documentation>Identifies the Setup (Sensor-measurement code-installation combination) for this particular ISO 19156 observation. It is optional, to accommodate situations where it is more compact to specify Code and position directly.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PhenTime" type="TimeScopeType" minOccurs="0">
+			<xs:element name="PhenTime" type="TimeScope" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 19156 phenomenonTime. Time when the phenomenon took place. Optional because it may be reported higher in the hierarchy. Note that in the case of forecasts this phenomenon time may occur in the future.</xs:documentation>
 				</xs:annotation>
@@ -1490,12 +1490,12 @@
 					<xs:documentation>ISO 19156 resultTme. Time when the result (value) was obtained. Optional because a) it may be reported higher in the hierarchy.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ValidTime" type="TimeScopeType" minOccurs="0">
+			<xs:element name="ValidTime" type="TimeScope" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 19156 validTme. A timescope that expresses the time interval that the result will be vallid for. Useful Time when the result (value) was obtained. Optional because a) it may be reported higher in the hierarchy.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="TXStatus" type="TransmitConfirmCodeType" minOccurs="0">
+			<xs:element name="TXStatus" type="TransmitConfirmCode" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Text that indicates the status of the communication with the sensor when the associated data were transmitted. This is used to indicate if any communication errors occurred that may invalidate the data stream.</xs:documentation>
 				</xs:annotation>
@@ -1530,17 +1530,17 @@
 					<xs:documentation>An integer reference to the geographical location of an obbservation.Use this if the dataset will reference the same locations multiple times.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FOIPosition" type="PositionType" minOccurs="0" maxOccurs="1">
+			<xs:element name="FOIPosition" type="Position" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The geographical extent of an individual observation, expressed as a Potition. This is only needed when the position can/does change between readings.  Do NOT use together with LocRef, FOILineString, or FOIMultiPolygon.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FOILineString" type="LineStringType" minOccurs="0" maxOccurs="1">
+			<xs:element name="FOILineString" type="LineString" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The geographical extent of an individual observation, expressed as a LineString.  This is only needed when the location can/does change between readings.  Do NOT use together with LocRef, FOIPosition, or FOIMultiPolygon.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="FOIMultiPolygon" type="MultiPolygonSpatialScopeType" minOccurs="0"
+			<xs:element name="FOIMultiPolygon" type="MultiPolygonSpatialScope" minOccurs="0"
 				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The geographical extent of an individual observation, expressed as a MultiPolygon.  This is only needed when the location can/does change between readings.  Do NOT use together with LocRef, FOIPosition, or FOILineString.</xs:documentation>
@@ -1572,7 +1572,7 @@
 					<xs:documentation>A nested collection.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="ContextItem" type="ContextItemType" minOccurs="0"
+			<xs:element name="ContextItem" type="ContextItem" minOccurs="0"
 				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>List of context items. These allow associating geopolitical-context-specific information to otherwise universal data types..</xs:documentation>
@@ -1585,17 +1585,17 @@
 			<xs:documentation>This type enables describing a spatial scope or feature of interest using a point, LineString, or MultiPolygon. Only ONE of the three elements contained within it should be used in any given instance.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="Position" type="PositionType" minOccurs="0">
+			<xs:element name="Position" type="Position" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The FOIShape is a Position.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="LineString" type="LineStringType" minOccurs="0">
+			<xs:element name="LineString" type="LineString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The FOIShape is a LineString.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="MultiPolygon" type="MultiPolygonSpatialScopeType" minOccurs="0">
+			<xs:element name="MultiPolygon" type="MultiPolygonSpatialScope" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The FOIShape is a MultiPolygon.</xs:documentation>
 				</xs:annotation>
