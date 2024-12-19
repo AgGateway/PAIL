@@ -2,6 +2,7 @@
 <xs:schema xmlns="http://aggateway.org/PAIL/0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://aggateway.org/PAIL/0.1" elementFormDefault="qualified"
 	attributeFormDefault="unqualified">
+	<!-- Recommendation: Download archive file at https://github.com/AgGateway/PAIL/releases/latest and expand it into your working directory. -->
 	<xs:annotation>
 		<xs:documentation>------------------------ REFERENCE DATA-RELATED TYPES --------------------</xs:documentation>
 	</xs:annotation>
